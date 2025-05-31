@@ -8,7 +8,7 @@ function CONN_RESET {
 	kill -9 $(pidof /usr/bin/tun2proxy-bin) 2>/dev/null || true
 	kill -9 $(pidof /usr/bin/warp-plus) 2>/dev/null || true
 	sleep 2
-	warp-plus --gool $endpoint_IP:$endpoint_PORT -4 >/var/log/warp_output.log &
+	warp-plus --gool --endpoint $endpoint_IP:$endpoint_PORT -4 >/var/log/warp_output.log &
 }
 
 function handle_failed_attempts {
