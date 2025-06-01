@@ -13,8 +13,8 @@ services:
       - "80:80"
       - "443:443"
     #-- uncomment below lines if you edit start script
-    #    volumes:
-    #      - ./nginx/start.sh:/app/start.sh:ro
+    volumes:
+      - ./nginx/start.sh:/app/start.sh:ro
 
 
   dnsmasq:
