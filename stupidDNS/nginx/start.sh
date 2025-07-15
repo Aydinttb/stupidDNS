@@ -8,7 +8,7 @@ function CONN_RESET {
 	kill -9 $(pidof /usr/bin/tun2proxy-bin) 2>/dev/null || true
 	kill -9 $(pidof /usr/bin/warp-plus) 2>/dev/null || true
 	sleep 2
-	warp-plus --endpoint $endpoint_IP:$endpoint_PORT -4 >/var/log/warp_output.log &
+	warp-plus --gool -4 >/var/log/warp_output.log &
 }
 
 function handle_failed_attempts {
@@ -20,7 +20,7 @@ function start_script {
 	echo "nameserver 1.1.1.1" >/etc/resolv.conf
 	echo "Waiting 5 seconds before initial check..."
 
-	warp-plus --endpoint $endpoint_IP:$endpoint_PORT -4 >/var/log/warp_output.log &
+	warp-plus --gool -4 >/var/log/warp_output.log &
 
 	local attempt_count=0
 	local max_attempts=10
